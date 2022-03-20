@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat 4you | from one to everyone</title>
+    <title>Chat 4you | our features</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="../../css/custom.css">
     <link rel="icon" type="image/png" href="../../images/google-chat.png">
@@ -20,13 +20,7 @@
             <a href="/features" class='navbar-link text-decoration-none text-light mx-auto'>Features</a>
         </div>
     </header>
-    <main class="pb-5">
-        <section class="container">
-            <h1 class="display-6 text-center mt-5">Chat 4you, chat with you friends or find then!</h1>
-            <div class="mt-5 d-flex justify-content-center">
-                <a href="/signin" class="text-center"><img src="../../images/moe.png" class="w-50"></a>
-            </div>
-        </section>
+    <main>
     </main>
     <footer class="bg-dark d-flex justify-content-center p-1">
         <a href="https://github.com/FabricioFL" class="text-light text-decoration-none p-3">&#169; Fabrício Freitas Lima 2022</a>

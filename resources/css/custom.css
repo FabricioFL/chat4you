@@ -11,3 +11,11 @@ footer
     left: 0;
     right: 0;
 }
+
+main img
+{
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
