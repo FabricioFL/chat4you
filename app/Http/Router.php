@@ -4,8 +4,6 @@ namespace App\Http;
 
 class Router
 {
-
-    private static string $uri;
     private static array $queryParams;
     private static array $postVars;
 
@@ -13,7 +11,7 @@ class Router
     {
         if($_SERVER['REQUEST_URI'] == $route)
         {
-            header('Location:'.'../../resources/view/'.$response.'.php');
+            header('location:'.'../../resources/view/'.$response.'.php');
         }
     }
 

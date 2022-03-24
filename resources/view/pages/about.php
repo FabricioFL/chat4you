@@ -25,7 +25,7 @@
             <h1 class="display-6 text-center">About chat 4you</h1>
             <p class="lead text-center mt-3">
                 This project is created to fix my knowledges of programming, including frontend and backend
-                i dont have great ambicious with this project, but i will keep it online to all people.
+                i don't have great ambicious with this project, but i will keep it online to all people.
             </p>
         </section>
     </main>

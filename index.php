@@ -11,3 +11,5 @@ Router::get('/signin', 'pages/signin');
 Router::get('/about', 'pages/about');
 
 Router::get('/features', 'pages/features');
+
+Router::get('/logout', 'pages/logout');

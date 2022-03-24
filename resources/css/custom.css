@@ -19,3 +19,9 @@ main img
     -moz-user-select: none;
     -webkit-user-select: none;
 }
+
+.h-captcha
+{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}

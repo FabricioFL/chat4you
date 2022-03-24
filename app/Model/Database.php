@@ -8,27 +8,40 @@ use App\Model\User;
 
 class Database
 {
-    private static pdo $connect = new pdo('mysql:host = localhost; dbname = chat4you', 'dev', '');
+    private $db;
 
-    protected static function __construct()
+    private function start()
     {
-        $query = self::$connect->prepare('CREATE TABLE IF NOT EXISTS users
-        (
-            _id varchar(64) primary key not null,
-            _username varchar(128) unique not null,
-            _email varchar(256) unique not null,
-            _password varchar(64) not null,
-            _lastsee varchar(15) not null,
-        )');
-        $query->execute();
+        $this->db = new pdo('mysql:host=localhost;dbname=chat4you', 'dev', '');
+        $query = $this->db->prepare('CREATE TABLE IF NOT EXISTS users (
+            _id varchar(256) primary key unique not null,
+            _username varchar(256) not null unique,
+            _email varchar(256) not null unique,
+            _password varchar(256) not null
+        )')->execute();
     }
 
-    protected function appendUser(string $username, string $email, string $password, string $time)
+    public function appendUser(string $username, string $email, string $password)
     {
-        $user = new User($username, $email, $password);
-        $user->setLastSee($time);
-        $query = self::$connect->prepare('INSERT INTO users (_id, _username, _email, _password, _lastsee) VALUES
-         (:_id, :_user, :_email, :_password, :_lastsee)');
+        $this->start();
+        $query = $this->db->prepare('INSERT IGNORE INTO users
+         (_id, _username, _email, _password) VALUES
+         (:_id, :_username, :_email, :_password)');
+         $query->bindValue(':_id', hash('sha256', time()));
+         $query->bindValue(':_username', $username);
+         $query->bindValue(':_email', $email);
+         $query->bindValue(':_password', $password);
+         $query->execute();
+    }
 
+    public function checkUser(string $email, string $password)
+    {
+        $this->start();
+        $query = $this->db->prepare('SELECT * FROM users WHERE _email = :_email AND _password = :_password');
+         $query->bindValue(':_email', $email);
+         $query->bindValue(':_password', $password);
+         $query->execute();
+         $data = $query->fetchAll();
+         return $data;
     }
 }
