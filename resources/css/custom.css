@@ -25,3 +25,32 @@ main img
     margin-top: 2rem;
     margin-bottom: 2rem;
 }
+
+.left-panel
+{
+    z-index: 10;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background-color: #000000;
+    width: 15rem;
+    height: 100vh;
+}
+
+.btn-logout
+{
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 1rem;
+    margin-left: 2rem;
+    width: 10rem;
+}
+
+.menu-option
+{
+    width: 3rem;
+    cursor: pointer;
+}.menu-option:hover
+{
+    width: 4rem;
+}

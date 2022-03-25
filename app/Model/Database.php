@@ -41,7 +41,7 @@ class Database
          $query->bindValue(':_email', $email);
          $query->bindValue(':_password', $password);
          $query->execute();
-         $data = $query->fetchAll();
+         $data = $query->fetch(PDO::FETCH_ASSOC);
          return $data;
     }
 }

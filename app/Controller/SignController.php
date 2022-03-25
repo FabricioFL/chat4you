@@ -24,8 +24,9 @@ class SignController
             $userData = $db->checkUser($_POST['Email'], $_POST['Password']);
             if($userData != null && $_POST['password'] == $userData[3])
             {
-                $_SESSION['username'] = $userData[1];
-                $_SESSION['email'] = $userData[2];
+                $_SESSION['image'] = '../../images/konimg.png';
+                $_SESSION['username'] = $userData['_username'];
+                $_SESSION['email'] = $userData['_email'];
                 $_SESSION['login'] = true;
                 return ;
             }else if($_POST != null && $userData == null)

@@ -19,7 +19,23 @@
 </head>
 <body>
     <main>
-        <a href="/logout" class="btn btn-dark">Sair</a>
+        <aside class="left-panel">
+            <img src="<?php echo $_SESSION['image']; ?>" class="rounded-circle w-50 mx-auto mt-3" alt="Profile">
+            <h2 class="lead text-light mx-auto mt-3"><?php echo $_SESSION['username']; ?></h2>
+            <img src="../../images/notify.png" class="mx-auto my-3 menu-option" title="Notificações">
+            <img src="../../images/message.png" class="mx-auto my-3 menu-option" title="Mensagens">
+            <a href="/logout" class="btn btn-secondary text-center btn-logout">Sair</a>
+        </aside>
+        <?php
+            echo '
+            <section class="d-flex justify-content-center pt-3">
+                <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                <p class="lead">Bem-vindo(a) '.$_SESSION['username'].' 🖤</p>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </section>';
+        ?>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
