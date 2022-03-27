@@ -54,3 +54,23 @@ main img
 {
     width: 4rem;
 }
+
+.btn-transparent
+{
+    background-color: #ffffff00;
+    border: 0;
+}
+
+#alert-welcome
+{
+    left: 50%;
+    right: 50%;
+    min-width: 18rem;
+    position: absolute;
+}
+
+.notification-title
+{
+    text-decoration: none;
+    color: inherit;
+}

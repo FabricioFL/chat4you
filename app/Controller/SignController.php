@@ -21,12 +21,14 @@ class SignController
         $db = new Database();
         if($_POST != null)
         {
-            $userData = $db->checkUser($_POST['Email'], $_POST['Password']);
-            if($userData != null && $_POST['password'] == $userData[3])
+            $userData = $db->checkUser($_POST['Email']);
+            if($userData != null && password_verify($_POST['Password'], $userData['_password']) == true)
             {
-                $_SESSION['image'] = '../../images/konimg.png';
+                $_SESSION['image'] = '../../images/user-image.png';
                 $_SESSION['username'] = $userData['_username'];
                 $_SESSION['email'] = $userData['_email'];
+                $_SESSION['notifications'] = $db->userHasNotification($userData['_username'])? $db->userHasNotification($userData['_username']): ['nothing now'];
+                $_SESSION['messages'] = $db->userHasNotification($userData['_username']) ? $db->userHasNotification($userData['_username']) : ['nothing now'];
                 $_SESSION['login'] = true;
                 return ;
             }else if($_POST != null && $userData == null)
